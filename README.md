@@ -1,3 +1,6 @@
+<br>
+<a href="https://www.vcluster.com"><img src="docs/static/media/vcluster_horizontal_black.svg" width="500"></a>
+
 # Virtual Kubernetes Clusters Tutorial
 
 ## Overview
