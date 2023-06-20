@@ -27,4 +27,5 @@ Please use the [official virtual clusters](https://www.vcluster.com/docs/what-ar
 
 I run all my labs on [kind](https://kind.sigs.k8s.io/) and provide my configuration for all labs. For sure you can use any other Kubernetes cluster as your host cluster. If you need specific tools for a lab, e.g. vcluster-cli, helm, Metallb, etc. you find then in the prerequisites sections of the specific lab.
 
+<br>
 Copyright (c) 2023 Markus Obsil
