@@ -1,5 +1,5 @@
 <br>
-<a href="https://www.vcluster.com"><img src="docs/static/media/vcluster_horizontal_black.svg" width="500"></a>
+<img src="https://raw.githubusercontent.com/loft-sh/vcluster/main/docs/static/media/vcluster_horizontal_black.svg" width="500">
 
 # Virtual Kubernetes Clusters Tutorial
 
