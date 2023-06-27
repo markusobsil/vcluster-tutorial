@@ -17,7 +17,7 @@ Please use the [official virtual clusters](https://www.vcluster.com/docs/what-ar
 
 ## Labs
 
-* [Lab 1 - Virtual cluster Introduction](/lab1)
+* [Lab 1 - Virtual cluster introduction](/lab1)
 * [Lab 2 - Multitenancy for Development Teams](/lab2)
 * [Lab 3 - Fake and Real Nodes](/lab3)
 * [Lab 4 - Access services on the Host Cluster](/lab4)
