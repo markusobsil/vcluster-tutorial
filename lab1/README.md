@@ -190,6 +190,27 @@ networkpolicy.networking.k8s.io/allow-all-ingress-my-webserver created
 ```
 
 ### Questions
+
 1. After creating these resources, compare the resources between virtual cluster and host cluster. Which resources are synced to the host cluster?
 
 A full list of resources and how they are synced, can be found in the [offical documentation](https://www.vcluster.com/docs/architecture/synced-resources).
+
+## 8. Cleanup
+
+Delete at first the virtual cluster with the vcluster CLI.
+
+```
+vcluster delete my-first-vcluster
+info   Stopping docker proxy...
+info   Delete vcluster my-first-vcluster...
+done √ Successfully deleted virtual cluster my-first-vcluster in namespace vcluster-my-first-vcluster
+done √ Successfully deleted virtual cluster namespace vcluster-my-first-vcluster
+```
+
+And then delete the kind cluster.
+
+```
+> kind delete cluster --name vcluster-host
+Deleting cluster "vcluster-host" ...
+Deleted nodes: ["vcluster-host-control-plane"]
+```
