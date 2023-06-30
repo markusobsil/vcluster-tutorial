@@ -173,7 +173,7 @@ vcluster create all-real-nodes --extra-values resources/all-real-nodes-values.ya
 ### Create a deployment
 
 ```bash
-k apply --filename resources/real-nodes-deployment01.yaml
+k apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
