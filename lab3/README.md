@@ -193,3 +193,47 @@ info   Delete vcluster all-real-nodes...
 done √ Successfully deleted virtual cluster all-real-nodes in namespace vcluster-all-real-nodes
 done √ Successfully deleted virtual cluster namespace vcluster-all-real-nodes
 ```
+
+## Real Nodes with Label Selector
+
+### Add labels to Kind nodes
+
+```bash
+k label --context kind-vcluster-host nodes vcluster-host-worker2 "example.com/tier=vcluster"
+k label --context kind-vcluster-host nodes vcluster-host-worker3 "example.com/tier=vcluster"
+```
+
+### Create vcluster
+
+```bash
+vcluster create real-nodes-selector --extra-values resources/real-nodes-selector-values.yaml
+```
+
+### Questions
+
+1. How many nodes are in your Kind cluster?
+2. How many nodes are in your vcluster?
+3. How are the vcluster nodes labeled?
+
+### Create a deployment
+
+```bash
+k apply --filename resources/deployment01.yaml
+```
+
+### Questions
+
+1. On which nodes are the pods running?
+2. Can you explain the node assignment?
+
+### Delete the vcluster
+
+```bash
+vcluster delete real-nodes-selector
+```
+```
+info   Stopping docker proxy...
+info   Delete vcluster real-nodes-selector...
+done √ Successfully deleted virtual cluster real-nodes-selector in namespace vcluster-real-nodes-selector
+done √ Successfully deleted virtual cluster namespace vcluster-real-nodes-selector
+```
