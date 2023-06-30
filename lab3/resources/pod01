@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: fake-nodes-pod01
+  name: pod01
 spec:
   containers:
     - command:
