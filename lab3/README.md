@@ -65,7 +65,7 @@ vcluster create fake-nodes
 ### Deploy a Pod
 
 ```bash
-k apply --filename resources/fake-nodes-pod01
+k apply --filename resources/pod01
 ```
 
 ### Questions
@@ -76,7 +76,7 @@ k apply --filename resources/fake-nodes-pod01
 ### Deploy a second Pod
 
 ```bash
-k apply -f resources/fake-nodes-pod02
+k apply --filename resources/pod02
 ```
 
 ### Questions
@@ -87,7 +87,7 @@ k apply -f resources/fake-nodes-pod02
 ### Delete the second Pod
 
 ```bash
-k delete pods fake-nodes-pod02
+k delete pods pod02
 ```
 
 ### Questions
@@ -98,7 +98,7 @@ k delete pods fake-nodes-pod02
 ### Create a deployment
 
 ```bash
-k apply -f resources/fake-nodes-deployment01.yaml
+k apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
