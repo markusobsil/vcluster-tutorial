@@ -190,6 +190,32 @@ kubectl get nodes ip-10-44-12-111.eu-central-1.compute.internal --output yaml | 
 
 ## Real Nodes
 
+*Real Nodes* in comparison to *Fake Nodes*, will sync the real node
+information from the host cluster. As stated in
+[Fake Nodes](#fake-nodes) RBAC configuration is needed for the vcluster to
+be able to access the Kube API on the host cluster.
+
+!!! note
+    This is **not** true for *Kind*, as described in
+    [Fake Nodes](#fake-nodes) as well.
+
+To configure syncing the real nodes, some values need to be set when deploying
+the vcluster. This can either be done on as an argument - when using the
+`vcluster` CLI command - or by using a YAML file with `vcluster` and Helm.
+
+The following values need to be set for to enable real node sync:
+
+```yaml
+sync:
+  nodes:
+    enabled: true
+```
+Pass the filename as the `--extra-values` parameter to `vcluster` when
+creating the vcluster.
+
+As is the case for [Fake Nodes](#fake-nodes), only real nodes where a Pod
+is running will be synced.
+
 ### Create vcluster
 
 ```bash
@@ -227,6 +253,26 @@ done √ Successfully deleted virtual cluster namespace vcluster-real-nodes
 ```
 
 ## All Real Nodes
+
+*All Real Nodes* is very similar to [Real Nodes](#real-nodes). The difference
+is that with **All Real Nodes** all nodes are synced from the host cluster,
+not only the ones where a Pod is running.
+
+To sync all real nodes, an additional line must be added to the values file:
+
+```yaml
+sync:
+  nodes:
+    enabled: true
+    syncAllNodes: true
+```
+
+You can also call `vcluster` with the `--sync-all-nodes` flag to enable this
+mode.
+
+!!! note
+    You must pass the `--fake-nodes false` flag, for the `--sync-all-nodes`
+    flag to work.
 
 ### Create vcluster
 
