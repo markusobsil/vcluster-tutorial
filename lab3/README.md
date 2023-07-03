@@ -75,7 +75,7 @@ vcluster create fake-nodes
 ### Deploy a Pod
 
 ```bash
-k apply --filename resources/pod01
+kubectl apply --filename resources/pod01
 ```
 
 ### Questions
@@ -86,7 +86,7 @@ k apply --filename resources/pod01
 ### Deploy a second Pod
 
 ```bash
-k apply --filename resources/pod02
+kubectl apply --filename resources/pod02
 ```
 
 ### Questions
@@ -97,7 +97,7 @@ k apply --filename resources/pod02
 ### Delete the second Pod
 
 ```bash
-k delete pods pod02
+kubectl delete pods pod02
 ```
 
 ### Questions
@@ -108,7 +108,7 @@ k delete pods pod02
 ### Create a deployment
 
 ```bash
-k apply --filename resources/deployment01.yaml
+kubectl apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
@@ -140,7 +140,8 @@ running on the `sandbox` DTP tooling cluster.
 #### DTP sandbox node
 
 ```bash
-$ k get nodes ip-10-44-12-111.eu-central-1.compute.internal --output yaml | \
+$ kubectl get nodes ip-10-44-12-111.eu-central-1.compute.internal | \
+    --output yaml | \
     --context dok-gitops-argo-sandbox | \
     jq '.metadata.labels'
 ```
@@ -173,7 +174,7 @@ $ k get nodes ip-10-44-12-111.eu-central-1.compute.internal --output yaml | \
 #### vcluster node one DTP sandbox
 
 ```bash
-k get nodes ip-10-44-12-111.eu-central-1.compute.internal --output yaml | \
+kubectl get nodes ip-10-44-12-111.eu-central-1.compute.internal --output yaml | \
     jq '.metadata.labels'
 ```
 ```json
@@ -204,7 +205,7 @@ vcluster create real-nodes --extra-values resources/real-nodes-values.yaml
 ### Create a deployment
 
 ```bash
-k apply --filename resources/deployment01.yaml
+kubectl apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
@@ -242,7 +243,7 @@ vcluster create all-real-nodes --extra-values resources/all-real-nodes-values.ya
 ### Create a deployment
 
 ```bash
-k apply --filename resources/deployment01.yaml
+kubectl apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
@@ -268,8 +269,8 @@ done √ Successfully deleted virtual cluster namespace vcluster-all-real-nodes
 ### Add labels to Kind nodes
 
 ```bash
-k label --context kind-vcluster-host nodes vcluster-host-worker2 "example.com/tier=vcluster"
-k label --context kind-vcluster-host nodes vcluster-host-worker3 "example.com/tier=vcluster"
+kubectl label --context kind-vcluster-host nodes vcluster-host-worker2 "example.com/tier=vcluster"
+kubectl label --context kind-vcluster-host nodes vcluster-host-worker3 "example.com/tier=vcluster"
 ```
 
 ### Create vcluster
@@ -287,7 +288,7 @@ vcluster create real-nodes-selector --extra-values resources/real-nodes-selector
 ### Create a deployment
 
 ```bash
-k apply --filename resources/deployment01.yaml
+kubectl apply --filename resources/deployment01.yaml
 ```
 
 ### Questions
