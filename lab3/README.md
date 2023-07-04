@@ -312,6 +312,20 @@ done √ Successfully deleted virtual cluster namespace vcluster-all-real-nodes
 
 ## Real Nodes with Label Selector
 
+The last option to look at is the *Real Nodes Label Selector* mode. This is
+similar to [All Real Nodes](#all-real-nodes), but only nodes with a specific
+label will be synced.
+
+As with the previous modes, the settings can either be done through a file or
+using the CLI. An example configuration file is shown below.
+
+```yaml
+sync:
+  nodes:
+    enabled: true
+    nodeSelector: "example.com/tier=vcluster"
+```
+
 ### Add labels to Kind nodes
 
 ```bash
@@ -330,6 +344,7 @@ vcluster create real-nodes-selector --extra-values resources/real-nodes-selector
 1. How many nodes are in your Kind cluster?
 2. How many nodes are in your vcluster?
 3. How are the vcluster nodes labeled?
+4. What could be an use case for this mode?
 
 ### Create a deployment
 
