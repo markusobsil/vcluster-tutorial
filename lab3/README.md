@@ -195,9 +195,9 @@ information from the host cluster. As stated in
 [Fake Nodes](#fake-nodes) RBAC configuration is needed for the vcluster to
 be able to access the Kube API on the host cluster.
 
-!!! note
-    This is **not** true for *Kind*, as described in
-    [Fake Nodes](#fake-nodes) as well.
+> **Note**
+> This is **not** true for *Kind*, as described in [Fake Nodes](#fake-nodes)
+> as well.
 
 To configure syncing the real nodes, some values need to be set when deploying
 the vcluster. This can either be done on as an argument - when using the
@@ -270,9 +270,9 @@ sync:
 You can also call `vcluster` with the `--sync-all-nodes` flag to enable this
 mode.
 
-!!! note
-    You must pass the `--fake-nodes false` flag, for the `--sync-all-nodes`
-    flag to work.
+> **Note**
+> You must pass the `--fake-nodes false` flag, for the `--sync-all-nodes` flag
+> to work.
 
 ### Create vcluster
 
