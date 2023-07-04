@@ -1,0 +1,4 @@
+sync:
+  nodes:
+    enabled: true
+    nodeSelector: "example.com/tier=vcluster"
