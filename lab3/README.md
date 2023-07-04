@@ -140,7 +140,7 @@ running on the `sandbox` DTP tooling cluster.
 #### DTP sandbox node
 
 ```bash
-$ kubectl get nodes ip-10-44-12-111.eu-central-1.compute.internal | \
+kubectl get nodes ip-10-44-12-111.eu-central-1.compute.internal | \
     --output yaml | \
     --context dok-gitops-argo-sandbox | \
     jq '.metadata.labels'
