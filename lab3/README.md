@@ -9,6 +9,9 @@ be able to answer the following questions:
 * What are *Real Nodes*?
 * What are *Node Label Selectors* used for?
 
+The documentation for this topics is locate
+[here](https://www.vcluster.com/docs/architecture/nodes).
+
 ## Prerequisites
 
 The prerequisites are the same as in [Lab 1](../lab1/README.md).
