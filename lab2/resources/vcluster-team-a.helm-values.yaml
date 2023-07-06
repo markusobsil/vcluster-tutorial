@@ -1,0 +1,4 @@
+syncer:
+  kubeConfigContextName: "vcluster-team-a"
+  extraArgs:
+  - --tls-san=vcluster-team-a.127-0-0-1.nip.io
